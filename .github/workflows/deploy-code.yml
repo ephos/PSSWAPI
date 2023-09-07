@@ -25,7 +25,14 @@ jobs:
 
       - name: Extract Repo Name
         id: repo_name
-        run: echo "repo_name=$(echo '${{ github.repository }}' | cut -d '/' -f 2)" >> $GITHUB_OUTPUT
+        run: | 
+          echo "repo_name=$(echo '${{ github.repository }}' | cut -d '/' -f 2)" >> $GITHUB_OUTPUT
+          echo ${{ steps.repo_name.outputs.repo_name }}
+          
+      - name: Rename 'src' to Module Name
+        shell: pwsh
+        run: |
+          Rename-Item -Path ./src/ -NewName ${{ steps.repo_name.outputs.repo_name }} -Force
           
       - name: Publish PowerShell
         uses: natescherer/publish-powershell-action@v1.0.3

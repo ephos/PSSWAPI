@@ -17,3 +17,4 @@ Update-FormatData -PrependPath $PSScriptRoot\Format\swapi.format.ps1xml
 
 # Argument completion.
 # If needed will go here.  Comment stub, deal with it.
+# New useless comment

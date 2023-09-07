@@ -30,6 +30,6 @@ jobs:
       - name: Publish PowerShell
         uses: natescherer/publish-powershell-action@v1.0.3
         with:
-          token: ${{ secrets.fake}}
+          token: ${{ secrets.PSGalleryToken }}
           target: gallery
           path: ${{ steps.repo_name.outputs.repo_name }}/

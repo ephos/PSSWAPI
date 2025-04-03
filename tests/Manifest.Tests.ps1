@@ -68,7 +68,7 @@ Describe 'Module Structure and Syntax' {
 		}
 	}
 
-	Context "Function Syntax - <_.BaseName>" -ForEach $functionsAll {
+	Context "Function Syntax: <_.BaseName>" -ForEach $functionsAll {
 
 		It 'has no syntax errors' {
 
@@ -82,7 +82,7 @@ Describe 'Module Structure and Syntax' {
 		}
 	}
 
-	Context "Public Function Exported - <_.BaseName>" -ForEach $functionsPublic {
+	Context "Public Function Exported: <_.BaseName>" -ForEach $functionsPublic {
 
 		It 'is exported in the module manifest' {
 			$manifest.ExportedCommands.Keys.GetEnumerator() -contains $_.BaseName | Should -Be $true

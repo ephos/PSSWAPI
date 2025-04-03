@@ -8,7 +8,7 @@ function Get-SWAPISpecies {
     process {
         $invokeSwapiReqParams = @{
             Method = 'Get'
-            Path   = 'species'
+            Path  = 'species'
         }
 
         if ($PSBoundParameters.ContainsKey('Name')) {
